@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #valor-form {
+            font-size: 32px;
+            height: 100px;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f3f3f3;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+            font-size: 24px;
+        }
+
+        #campo-numero {
+            font-size: 18px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        #resultado {
+            font-size: 18px;
+            background-color: #f5f5f5;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 20px;
+            text-align: left;
+            margin: -20px 0 0 -10px;
+        }
+    </style>
+</head>
+
+<body>
+    <form>
+        <input id="campo-numero" type="number" oninput="calcular()">
+    </form>
+    <div id="resultado"></div>
+    <script>
+        function calcular() {
+            const num = document.getElementById('campo-numero').value;
+            document.getElementById("resultado").innerHTML = '';
+            if (num !== '') {
+                for (let c = 1; c <= 10; c++) {
+                    document.getElementById("resultado").innerHTML += `${num} x ${c} = ${num * c} <br>`;
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

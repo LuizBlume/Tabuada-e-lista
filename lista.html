@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body,
+        h1,
+        h2,
+        ul,
+        li {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+        }
+
+        #container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 10px;
+            background-color: #fff;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+
+        #inputNome {
+            width: 97.3%;
+            padding: 10px;
+            margin-bottom: 3px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            text-align: center;
+        }
+
+        ul#listaNomes {
+            list-style: none;
+            padding: 0;
+            text-align: center;
+        }
+
+        ul#listaNomes li {
+            margin-bottom: 10px;
+            padding: 10px;
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        ul#listaNomes li b {
+            font-weight: bold;
+            color: #007bff;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <input type="text" id="inputNome" placeholder="Digite um nome">
+        <div id="valor-form">
+            <ul id="listaNomes">
+                <li>
+                    <p>João Silva</p>
+                </li>
+                <li>
+                    <p>Maria Santos</p>
+                </li>
+                <li>
+                    <p>Carlos Oliveira</p>
+                </li>
+                <li>
+                    <p>Ana Pereira</p>
+                </li>
+                <li>
+                    <p>Pedro Rodrigues</p>
+                </li>
+                <li>
+                    <p>Isabel Ferreira</p>
+                </li>
+                <li>
+                    <p>Ricardo Sousa</p>
+                </li>
+                <li>
+                    <p>Luísa Costa</p>
+                </li>
+                <li>
+                    <p>José Almeida</p>
+                </li>
+                <li>
+                    <p>Sofia Gomes</p>
+                </li>
+                <li>
+                    <p>Miguel Santos</p>
+                </li>
+                <li>
+                    <p>Laura Pereira</p>
+                </li>
+                <li>
+                    <p>Paulo Rodrigues</p>
+                </li>
+                <li>
+                    <p>Diana Fernandes</p>
+                </li>
+                <li>
+                    <p>Fernando Pereira</p>
+                </li>
+                <li>
+                    <p>Patrícia Lima</p>
+                </li>
+                <li>
+                    <p>Rui Dias</p>
+                </li>
+                <li>
+                    <p>Cláudia Martins</p>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const inputNome = document.getElementById('inputNome');
+            const listaNomes = document.getElementById('listaNomes');
+
+            inputNome.addEventListener('input', function () {
+                const nomeDig = inputNome.value.toLowerCase();
+                const nomes = listaNomes.getElementsByTagName('li');
+
+                for (let i = 0; i < nomes.length; i++) {
+                    const nome = nomes[i].textContent.toLowerCase();
+
+                    if (nome.includes(nomeDig)) {
+                        nomes[i].innerHTML = nome.replace(nomeDig, '<b>' + nomeDig + '</b>');
+                    } else {
+                        nomes[i].innerHTML = nome;
+                    }
+                }
+            });
+        });
+
+    </script>
+</body>
+
+</html>
